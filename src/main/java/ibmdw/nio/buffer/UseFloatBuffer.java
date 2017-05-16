@@ -1,6 +1,6 @@
 package ibmdw.nio.buffer;
 
-import java.nio.*;
+import java.nio.FloatBuffer;
 
 /**
  * User: 智深

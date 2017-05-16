@@ -1,8 +1,9 @@
 package ibmdw.nio.nio_read_write;
 
-import java.io.*;
-import java.nio.*;
-import java.nio.channels.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 
 /**
  * User: 智深
