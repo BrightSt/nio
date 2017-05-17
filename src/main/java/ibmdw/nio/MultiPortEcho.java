@@ -27,26 +27,26 @@ public class MultiPortEcho {
 
         // Open a listener on each port, and register each one
         // with the selector
-        for (int i = 0; i < ports.length; ++i) {
+        for (int port : ports) {
             ServerSocketChannel ssc = ServerSocketChannel.open();
             ssc.configureBlocking(false);
             ServerSocket ss = ssc.socket();
-            InetSocketAddress address = new InetSocketAddress(ports[i]);
+            InetSocketAddress address = new InetSocketAddress(port);
             ss.bind(address);
 
             SelectionKey key = ssc.register(selector, SelectionKey.OP_ACCEPT);
 
-            System.out.println("Going to listen on " + ports[i]);
+            System.out.println("Going to listen on " + port);
         }
 
         while (true) {
             int num = selector.select();
 
-            Set selectedKeys = selector.selectedKeys();
-            Iterator it = selectedKeys.iterator();
+            Set<SelectionKey> selectedKeys = selector.selectedKeys();
+            Iterator<SelectionKey> it = selectedKeys.iterator();
 
             while (it.hasNext()) {
-                SelectionKey key = (SelectionKey) it.next();
+                SelectionKey key = it.next();
 
                 if ((key.readyOps() & SelectionKey.OP_ACCEPT)
                         == SelectionKey.OP_ACCEPT) {

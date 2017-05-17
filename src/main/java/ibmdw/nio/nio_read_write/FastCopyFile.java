@@ -1,4 +1,4 @@
-package ibmdw.nio;// $Id$
+package ibmdw.nio.nio_read_write;// $Id$
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

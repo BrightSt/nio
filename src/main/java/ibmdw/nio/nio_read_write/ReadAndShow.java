@@ -1,4 +1,4 @@
-package ibmdw.nio;// $Id$
+package ibmdw.nio.nio_read_write;// $Id$
 
 import java.io.FileInputStream;
 import java.nio.ByteBuffer;
@@ -6,7 +6,7 @@ import java.nio.channels.FileChannel;
 
 public class ReadAndShow {
     static public void main(String args[]) throws Exception {
-        FileInputStream fin = new FileInputStream("readandshow.txt");
+        FileInputStream fin = new FileInputStream("E:\\nio-master\\src\\main\\java\\ibmdw\\nio\\WriteSomeBytes.java");
         FileChannel fc = fin.getChannel();
 
         ByteBuffer buffer = ByteBuffer.allocate(1024);
